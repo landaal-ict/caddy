@@ -1,0 +1,29 @@
+(cloudflare) {
+  tls {
+    dns cloudflare plak hier je cloudflare dns token
+  }
+}
+
+# duplicati
+duplicati.int.landaalict.nl {
+  reverse_proxy http://10.0.0.250:8200
+  import cloudflare
+}
+
+# jellyfin
+media.int.landaalict.nl {
+  reverse_proxy http://10.0.0.250:8096
+  import cloudflare
+}
+
+# portainer
+portainer.int.landaalict.nl {
+  reverse_proxy http://10.0.0.250:9000
+  import cloudflare
+}
+
+# sabnzbd
+nzb.int.landaalict.nl {
+  reverse_proxy http://10.0.0.250:8080
+  import cloudflare
+}
